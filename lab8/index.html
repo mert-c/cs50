@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+            function check(a){
+
+
+                nodec = "Correct!";
+                nodei = "Incorrect";
+                let app = document.querySelector("#question1");
+                    if (a == "a1"){
+                        document.querySelector("#a1").style.backgroundColor = "red";
+                        app.innerHTML = "How many legs does spider-man have?" + "<br>" + nodei;
+                    }else if (a == "a2"){
+                        document.querySelector("#a2").style.backgroundColor = "green";
+                        app.innerHTML = "How many legs does spider-man have?" + "<br>" + nodec;
+                    }else if (a == "a3"){
+                        document.querySelector("#a3").style.backgroundColor = "red";
+                        app.innerHTML = "How many legs does spider-man have?" + "<br>" + nodei;
+                    }else if (a == "a4"){
+                        document.querySelector("#a4").style.backgroundColor = "red";
+                        app.innerHTML = "How many legs does spider-man have?" + "<br>" + nodei;
+                    }else if (a == "a5"){
+                        document.querySelector("#a5").style.backgroundColor = "red";
+                        app.innerHTML = "How many legs does spider-man have?" + "<br>" + nodei;
+                    }else if (a == "a6"){
+                        document.querySelector("#a6").style.backgroundColor = "red";
+                        app.innerHTML = "How many legs does spider-man have?" + "<br>" + nodei;
+                    }
+            };
+
+            function checker(){
+
+                let str = document.querySelector("#input1");
+                let app = document.querySelector("#question2");
+
+              if(str.value == "140"){
+                    str.style.backgroundColor = "green";
+                    let node = "Correct!";
+                    app.innerHTML = "How many characters allowed in a tweet in Twitter?" + "<br>" + node;
+              }else{
+                  str.style.backgroundColor = "red";
+                    let node = "Incorrect";
+                    app.innerHTML = "How many characters allowed in a tweet in Twitter?" + "<br>" + node;
+              }
+
+            };
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3 id = "question1">How many legs does spider-man have?</h3>
+
+                    <button type="Submit" id="a1" onclick = "check('a1')">1</button>
+                    <button type="Submit" id="a2" onclick = "check('a2')">2</button>
+                    <button type="Submit" id="a3" onclick = "check('a3')">3</button>
+                    <button type="Submit" id="a4" onclick = "check('a4')">4</button>
+                    <button type="Submit" id="a5" onclick = "check('a5')">5</button>
+                    <button type="Submit" id="a6" onclick = "check('a6')">6</button>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3 id = "question2">How many characters allowed in a tweet in Twitter?</h3>
+                <input type = "text" id = "input1">
+                <button type="submit" onclick="checker(); return false;">Check Answer</button>
+
+            </div>
+        </div>
+    </body>
+</html>

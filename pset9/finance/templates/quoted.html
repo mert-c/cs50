@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <div>
+
+        A share of {{ [quoted["name"], ['(',quoted["symbol"], ')'] | join('') ] | join(', ') }} costs {{ quoted["price"] | usd }}.
+
+    </div>
+
+    <div>
+        <form action="/buy" method="get" style="display:inline">
+            <button class="btn btn-primary" type="submit" style="margin-top: 10px">Buy</button>
+        </form>
+        <form action="/sell" method="get" style="display:inline">
+            <button class="btn btn-primary" type="submit" style="margin-top: 10px">Sell</button>
+        </form>
+    </div>
+{% endblock %}

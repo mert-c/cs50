@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+
+    <table class="table tablestriped">
+        <thead>
+            <tr>
+                <th class="text-start">Symbol</th>
+                <th class="text-start">Name</th>
+                <th class="text-end">Shares</th>
+                <th class="text-end">Price</th>
+                <th class="text-end">TOTAL</th>
+            </tr>
+        </thead>
+            <tfoot>
+                <tr>
+                    <td colspan="4" class = "text-right">TOTAL</td>
+                    <td>{{ sum_totals | usd }}</td>
+                </tr>
+            </tfoot>
+        <tbody>
+            {% for sum in summary %}
+                <tr>
+                    <td>{{ sum.symbol }}</td>
+                    <td>{{ sum.company }}</td>
+                    <td>{{ sum.sum_of_shares }}</td>
+                    <td>{{ sum.price | usd }}</td>
+                    <td>{{ sum.total | usd }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="4" class="text-right">CASH</td>
+                <td>{{ owned_cash | usd }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

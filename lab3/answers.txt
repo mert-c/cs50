@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: Because it takes longer in randomized case and shorter in sorted case.
+
+sort2 uses: Merge Sort
+
+How do you know?: Because it takes shorter in randomized case and longer in sorted case.
+
+sort3 uses: Selection Sort
+
+How do you know?: Because it takes the longest in worst and best case scenarios.
